@@ -1,0 +1,19 @@
+
+
+# create a reference database for the BLAST search with terminal/commandline NCBI BLAST+:
+# using the FASTA file of motifs created in the script 'predictortool_part1.py'
+
+cd /path-to-database
+makeblastdb -in gyramotifs.fas -dbtype prot
+
+ 
+ # query the nucleotide sequence of interest against this BLAST database:
+
+blastx -query query_sequence.fasta -db gyramotifs.fasta -qcov_hsp_perc 80 -out outputfile.txt -outfmt 6
+
+# the BLAST search generates a text file with the following columns: 
+# query sequence ID | reference sequence ID | percentage identical matches | alignment length (sequence overlap) 
+# number of mismatches | number of gap openings | start of alignment in query | end of alignment in query 
+# start of alignment in reference | end of alignment in reference | expect value | bit score 
+
+# the phenotype of the top motif hit (which was defined in 'predictortool_part1.py') is then used to predict the phenotype of the query sequence

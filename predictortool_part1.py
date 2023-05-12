@@ -14,7 +14,7 @@ import statistics
 #### GENERATING AMINO ACID SEQUENCES ####
 
 # import the fasta file of nucleotide sequences containing all the unique alleles of gyrA, as the variable 'ntsequences':
-ntsequences = SeqIO.parse("/Users/1043649/predictortoolcode/gyra_ntseqs.fas", "fasta")
+ntsequences = SeqIO.parse("ResistancePredictorTool/ExampleData/gyrAuniquealleles.fas", "fasta")
 
 # write a new file, AAseqs.fasta, which will contain the translated amino acid sequneces:
 with open("AAseqs.fas", "w") as aa_fas:

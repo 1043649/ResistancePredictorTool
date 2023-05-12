@@ -9,4 +9,4 @@ The second part of the tool, 'predictortool_part2.txt', performs a BLAST search 
 
 Additional downloads are required to reproduce this tool on the user's computer (Miniconda or Anaconda to install Python packages; NCBI BLAST+ to query the sequence of interest). The tool is in the process of being integrated into PubMLST, which will remove the need for access to the user's local computer and combine parts 1 and 2 so all steps of the script are automatically run consecutively.
 
-Example data and instructions for the Neisseria gonorrhoeae GyrA_91 mutation (prediction of ciprofloxacin resistance) can be found under 'RPTexample_instructions.txt', 'gyrAuniquealleles.fas', 'gyrAmotifs.fas', and 'WHOYgyrA.fas'. 
+Example data and instructions for the Neisseria gonorrhoeae GyrA_91 mutation (prediction of ciprofloxacin resistance) can be found under 'RPTexample_instructions.txt', 'gyrAuniquealleles.fas', 'gyrA91motifs.fas', and 'WHOYgyrA.fas'. 

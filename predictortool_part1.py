@@ -13,8 +13,8 @@ import statistics
 
 #### GENERATING AMINO ACID SEQUENCES ####
 
-# import the fasta file of nucleotide sequences containing all the unique alleles of gyrA, as the variable 'ntsequences':
-ntsequences = SeqIO.parse("ResistancePredictorTool/ExampleData/gyrAuniquealleles.fas", "fasta")
+# import the fasta file of nucleotide sequences containing all the unique alleles the gene of interest, as the variable 'ntsequences':
+ntsequences = SeqIO.parse("/path/to/uniquealleles.fas", "fasta")
 
 # write a new file, AAseqs.fasta, which will contain the translated amino acid sequneces:
 with open("AAseqs.fas", "w") as aa_fas:
@@ -29,7 +29,7 @@ with open("AAseqs.fas", "w") as aa_fas:
         SeqIO.write(aa_record, aa_fas, "fasta")
         
 # import the file of translated sequences as the variable 'aasequences':
-aasequences = SeqIO.parse("/Users/1043649/predictortoolcode/AAseqs.fas", "fasta")
+aasequences = SeqIO.parse("/path/to/AAseqs.fas", "fasta")
 
 # extract the lengths of the sequences:
 seq_lengths = []
@@ -43,7 +43,7 @@ print("Most common sequence length: ", modeseqlen)
 
 
 #### USER INPUTS ####
-# ask the user for their input (for gyrA inputs are: position = 91, WT = S, resistance mutations = F Y I, other mutations/ unknown = T):
+# ask the user for their input (eg. for gyrA inputs are: position = 91, WT = S, resistance mutations = F Y I, other mutations/ unknown = T):
 
 position_index = (int(input("What is the position of the mutation?")) -1) # position of the mutation (store as the index of that position)
 wt_aa = input("What is the amino acid in the wild type?") # wild type amino acid  
@@ -70,7 +70,7 @@ print("Outputs: " + out_wt + ", " + out_mut + ", " + out_other)
 #### DEFINING THE MOTIFS ####
 
 # import the file of the unique amino acid sequences created earlier
-aasequences = SeqIO.parse("/Users/1043649/predictortoolcode/AAseqs.fas", "fasta")
+aasequences = SeqIO.parse("/path/to/AAseqs.fas", "fasta")
 
 # extract only the sequences which have the most common length (to account for any sequencing issues which have led to slightly longer or shorter sequences):
 motif_sequences = []
